@@ -1,0 +1,37 @@
+[
+    {
+        "firstName": "Jonathan",
+        "lastName": "Uresti",
+        "email": "jcuresti@gmail.com",
+        "favoriteColor": "Dark Purple",
+        "birthday": "August 2, 2006"
+    },
+    {
+        "firstName": "Chris",
+        "lastName": "Uresti",
+        "email": "curesti@gmail.com",
+        "favoriteColor": "Red",
+        "birthday": "December 22, 1976"
+    },
+    {
+        "firstName": "Brooke",
+        "lastName": "Ashby",
+        "email": "ashby@gmail.com",
+        "favoriteColor": "Light Purple",
+        "birthday": "December 10, 1965"
+    },
+    {
+        "firstName": "Haydon",
+        "lastName": "Uresti",
+        "email": "huresti@gmail.com",
+        "favoriteColor": "Blue",
+        "birthday": "July 24, 1999"
+    },
+    {
+        "firstName": "Sabrina",
+        "lastName": "Uresti",
+        "email": "suresti@gmail.com",
+        "favoriteColor": "Mustard Yellow",
+        "birthday": "March 29, 2000"
+    }
+]
