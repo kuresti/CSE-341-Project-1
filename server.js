@@ -3,9 +3,11 @@
  * *********************************/
 const express = require('express');
 const app = express();
+const bodyParser = require('body-parser');
 const env = require('dotenv');
 const MongoClient = require('mongodb').MongoClient;
 const mongodb = require('./database/connectDB')
+
 
 /* **********************************
  * DotEnv configuration
@@ -15,7 +17,9 @@ env.config()
 /* **********************************
  * Routes
  * **********************************/
+app.use(bodyParser.json());
 app.use('/', require('./routes/index.js'));
+
 
 /* **********************************
  * Port server is listening to
