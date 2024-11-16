@@ -8,7 +8,7 @@ const contactsCont = require('../controllers/contacts');
 /* *******************************
  * Get Routes
  * *******************************/
-router.get('/', contactsCont.getAll);
+router.get('/contacts', contactsCont.getAll);
 
 router.get('/:id', contactsCont.getSingle);
 
