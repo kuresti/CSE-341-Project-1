@@ -8,6 +8,7 @@ const ObjectId = require('mongodb').ObjectId;
  * Get all from CSE-Project-1 Users
  * ********************************/
 const getAll = async(req, res) => {
+    // #swagger.tag=['Contacts']
     const result = await mongodb.getDb().collection('contacts').find();
     result.toArray().then((contacts) => {
         res.setHeader('Content-Type', 'application/json');
@@ -19,6 +20,7 @@ const getAll = async(req, res) => {
  * Get single from CSE-Project-1 Users
  * ********************************/
 const getSingle = async(req, res) => {
+    // #swagger.tag=['Contacts']
     const contactId = new ObjectId(req.params.id);
     const result = await mongodb.getDb().collection('contacts').find({ _id: contactId });
     result.toArray().then((contacts) => {
@@ -31,6 +33,7 @@ const getSingle = async(req, res) => {
  * POST Create New Contact
  * ********************************/
 const createNewContact = async(req, res) => {
+    // #swagger.tag=['Contacts']
     const newContact = {
         firstName: req.body.firstName,
         lastName: req.body.lastName,
@@ -50,6 +53,7 @@ const createNewContact = async(req, res) => {
  * PUT Update Contact
  * ***********************************/
 const updateContact = async(req, res) => {
+    // #swagger.tag=['Contacts']
     const contactId = new ObjectId(req.params.id);
     const contact = {
         firstName: req.body.firstName,
@@ -70,6 +74,7 @@ const updateContact = async(req, res) => {
  * DELETE Contact
  * ***********************************/
 const deleteContact = async(req,res) => {
+    // #swagger.tag=['Contacts']
    const contactId = new ObjectId(req.params.id);
    const response = await mongodb.getDb().collection('contacts').deleteOne({ _id: contactId });
    if (response.deletedCount > 0) {
