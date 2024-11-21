@@ -4,6 +4,9 @@
 const express = require('express');
 const router = express.Router();
 const contactsCont = require('../controllers/contacts');
+const validate = require('../validation/validation');
+const { handleErrors } = require('../utilities/validate');
+
 
 /* *******************************
  * Get Routes
@@ -15,13 +18,20 @@ router.get('/:id', contactsCont.getSingle);
 /* *******************************
  * POST Routes
  * *******************************/
-router.post('/', contactsCont.createNewContact);
-
+router.post(
+    '/', 
+    validate.contactsRules(),
+    validate.validateContacts,
+    handleErrors(contactsCont.createNewContact)
+)
 /* *******************************
  * PUT Routes
  * *******************************/
-router.put('/:id', contactsCont.updateContact);
-
+router.put('/:id', 
+    validate.contactsRules(),
+    validate.validateContacts,
+    handleErrors(contactsCont.updateContact)
+)
 /* *******************************
  * DELETE Routes
  * *******************************/
